@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="springmvc-spring-hibernate:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="springmvc-spring-hibernate.war">
+      <element id="artifact" artifact-name="springmvc-spring-hibernate:war exploded" />
+    </root>
+  </artifact>
+</component>
