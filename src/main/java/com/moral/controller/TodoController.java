@@ -48,7 +48,7 @@ public class TodoController {
     public String save(@PathVariable("id") int id, HttpServletRequest request, Map model) {
         Todo todo = todoService.selectTodo(id);
         todo.setTitle(request.getParameter("title"));
-        todoService.updateTitle(todo);
+        todoService.updateTodo(todo);
         return "redirect:/todo/index";
     }
 
@@ -63,7 +63,7 @@ public class TodoController {
     public String finish(@PathVariable("id") int id, @PathVariable("status") int status, Map model) {
         Todo todo = todoService.selectTodo(id);
         todo.setFinished(status);
-        todoService.updateStatus(todo);
+        todoService.updateTodo(todo);
         return "redirect:/todo/index";
     }
 }
