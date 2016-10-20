@@ -15,7 +15,7 @@ import java.util.List;
  * Created by bin.shen on 20/10/2016.
  */
 
-@Repository
+@Repository("todoDao")
 public class TodoDaoImpl implements TodoDao {
 
     @Autowired
