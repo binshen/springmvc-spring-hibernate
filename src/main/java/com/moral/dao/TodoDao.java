@@ -14,7 +14,7 @@ public interface TodoDao {
 
     public int insertTodo(Todo todo);
 
-    public int deleteTodo(int id);
+    public int deleteTodo(Todo todo);
 
     public int updateTitle(Todo todo);
 

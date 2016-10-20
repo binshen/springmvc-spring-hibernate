@@ -46,8 +46,7 @@ public class TodoController {
 
     @RequestMapping("/{id}/save")
     public String save(@PathVariable("id") int id, HttpServletRequest request, Map model) {
-        Todo todo = new Todo();
-        todo.setId(id);
+        Todo todo = todoService.selectTodo(id);
         todo.setTitle(request.getParameter("title"));
         todoService.updateTitle(todo);
         return "redirect:/todo/index";
@@ -55,14 +54,14 @@ public class TodoController {
 
     @RequestMapping("/{id}/delete")
     public String delete(@PathVariable("id") int id, Map model) {
-        todoService.deleteTodo(id);
+        Todo todo = todoService.selectTodo(id);
+        todoService.deleteTodo(todo);
         return "redirect:/todo/index";
     }
 
     @RequestMapping("/{id}/finish/{status}")
     public String finish(@PathVariable("id") int id, @PathVariable("status") int status, Map model) {
-        Todo todo = new Todo();
-        todo.setId(id);
+        Todo todo = todoService.selectTodo(id);
         todo.setFinished(status);
         todoService.updateStatus(todo);
         return "redirect:/todo/index";

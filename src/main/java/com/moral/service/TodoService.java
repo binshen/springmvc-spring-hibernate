@@ -30,8 +30,8 @@ public class TodoService {
         return todoDao.insertTodo(todo);
     }
 
-    public int deleteTodo(int id) {
-        return todoDao.deleteTodo(id);
+    public int deleteTodo(Todo todo) {
+        return todoDao.deleteTodo(todo);
     }
 
     public int updateTitle(Todo todo) {

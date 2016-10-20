@@ -49,8 +49,7 @@ public class TodoDaoImpl implements TodoDao {
         return 1;
     }
 
-    public int deleteTodo(int id) {
-        Todo todo = selectTodo(id);
+    public int deleteTodo(Todo todo) {
         template.delete(todo);
         return 1;
     }
